@@ -1,3 +1,6 @@
+//add at -> first Node, last Node, any particular index
+//rempve at -> first Node, last Node, any particular index
+
 class Node {
   constructor(data) {
     this.data = data;
