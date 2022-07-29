@@ -1,0 +1,28 @@
+input:-2                      output:-
+7
+100 80 60 70 60 75 85         1 1 1 2 1 4 6
+5
+3 5 0 9 8                     1 2 1 4 1
+
+
+function runProgram(input) {
+	input = input.trim().split("\n");
+	let [T,line] = [+input[0],1];
+	for(let r=0; r<T; r++){
+	    let n = +input[line++];
+	    let arr = input[line++].trim().split(" ").map(Number);
+	    let pointer = 1;
+	    let bag = 1+" ";
+	    while(pointer < n){
+	        let count = 1;
+	        for(let i=pointer-1; i>=0; i--){
+	            if(arr[pointer] > arr[i]){
+	                count++;
+	            }else{
+	                break;
+	            }
+	        }bag += count+" ";
+	        pointer++;
+	    }console.log(bag);
+	}
+}
