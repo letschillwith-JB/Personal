@@ -1,0 +1,57 @@
+// input -                  Output
+// 2
+
+// 2
+// 1 2 3 4                    10
+// 3
+// 1 2 3 4 5 6 7 8 9          25
+
+// ps- spirally traverse the matrix and find the sum of diagonals
+
+
+
+
+import java.util.*;
+class Main{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int tc = sc.nextInt();
+        for(int t=0; t<tc; t++){
+            int n = sc.nextInt();
+            int arr[][] = new int[n][n];
+            int left = 0; int top = 0; int right = n-1; int bottom = n-1;
+            int p=0;
+            int k=1;            
+            while(k<=n){k++;
+            for(int i=left; i<=right; i++){
+                arr[top][i] = sc.nextInt();p++;
+            }
+            top++;
+            for(int i=top; i<=bottom; i++){
+                arr[i][right] = sc.nextInt();p++;
+            }
+            right--;
+            for(int i=right; i>=left; i--){
+                arr[bottom][i] = sc.nextInt();p++;
+            }
+            bottom--;
+            for(int i=bottom; i>=top; i--){
+                arr[i][left] = sc.nextInt();p++;
+            }
+            left++;
+        }
+        int sum = 0;
+            for(int i=0; i<n; i++){
+                sum += arr[i][i];
+            }
+            for(int i=0, j=n-1; i<n && j>=0; i++, j--){
+                    if(i == j)continue;
+                    else{
+                        sum += arr[i][j];
+                    }
+            }
+            
+            System.out.println(sum);
+        }
+    }
+}
