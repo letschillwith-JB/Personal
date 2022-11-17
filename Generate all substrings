@@ -1,0 +1,37 @@
+/*1             
+4 
+aman
+
+a 
+am 
+ama 
+aman 
+m 
+ma 
+man 
+a 
+an 
+n
+*/
+
+
+
+import java.util.*;
+class Main{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int tc = sc.nextInt()   ;
+        while(tc-- > 0){
+            int n = sc.nextInt();
+            String[] str = sc.next().split("");
+            for(int i=0; i<n; i++){
+                for(int j=0; j<n; j++){
+                    String s = "";
+                    for(int k=i; k<=j; k++){
+                         s += str[k];
+                    }if(!s.isEmpty())System.out.println(s);
+                }
+            }
+        }
+    }
+}
