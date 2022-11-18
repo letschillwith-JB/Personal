@@ -1,0 +1,33 @@
+input -> 5
+         3 3 5 5 1
+         ---------
+output-> 3
+
+
+import java.util.*;
+class Main{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int arr[] = new int[n];
+        int sum=0;
+        for(int i=0; i<n; i++){
+            arr[i] = sc.nextInt();
+            sum += arr[i];
+        }
+        int sum2=0;
+        int diff=0;
+        for(int i=0; i<n; i++){
+            diff = sum-sum2-arr[i];
+            if(diff == sum2){
+                System.out.println(i+1);
+                break;
+            }
+            else if(diff < sum2){
+                System.out.println(-1);
+                break;
+            }
+            sum2 += arr[i];
+        }
+    }
+}
