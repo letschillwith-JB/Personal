@@ -1,0 +1,46 @@
+  //input = thisracecarisgood
+  //output= 7 
+  //i.e. the length of biggest palindromic substring
+  
+  
+  public static void masaiPalindromicSubstring(String str){
+    String [] s=str.split("");
+    int n=s.length;
+    int max=0;
+    String sss="";   
+
+    for(int i=0; i<n; i++){
+        for(int j=0; j<n; j++){
+            String string="";
+            for(int k=i; k<=j; k++){
+                 string += s[k];
+            }
+            boolean ans = isPalindrome(string);
+            if(ans!=false){
+                String[] newString = string.split("");
+                if(newString.length > max){
+                    max = newString.length;
+                    sss = string;
+                }
+            }
+        }
+    }
+    System.out.println(max);
+  }
+
+public static boolean isPalindrome(String s){
+    String string="";
+    String str[] = s.split("");
+    int start=0; int end=str.length-1;
+    int pointer=0;
+    while(start<end){
+        if(str[start++].equals(str[end--])){
+            continue;
+        }else{
+            pointer=1;break;
+        }
+    }
+    if(pointer == 0)return true;
+    else return false;
+    
+}
