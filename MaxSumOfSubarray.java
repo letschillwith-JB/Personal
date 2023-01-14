@@ -5,6 +5,7 @@ public class MaxSumOfSubarray {
         int arr[] = {-4,8,2,-5,7};
         int ans = printMaxSumOfSubarray(arr);
         System.out.println(ans);
+        // output will be 12 [8,2,-5,7]
     }
     static int printMaxSumOfSubarray(int arr[]){
         //by this algorith the Time Complexity will be O(N)
